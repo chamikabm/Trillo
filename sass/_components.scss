@@ -1,0 +1,55 @@
+//////////////////////////////////
+// LOGO
+.logo {
+  height: 3.25rem;
+}
+
+//////////////////////////////////
+// SEARCH
+.search {
+  &__input {
+
+  }
+
+  &__button {
+
+  }
+
+  &__icon {
+    // To format the SVG icons, You just simply give the Width and Height for the SVG element.
+    // Unlike, font icons you can customize SVG icons, that's very handy.
+    height: 2rem;
+    width:2rem;
+  }
+}
+
+
+//////////////////////////////////
+// USER NAVIGATION
+.user-nav {
+  &__icon-box {
+
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width:2.25rem;
+  }
+
+  &__notification {
+
+  }
+
+  &__user {
+
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+  }
+
+  &__user-name {
+
+  }
+}
