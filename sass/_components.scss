@@ -2,7 +2,7 @@
 // LOGO
 .logo {
   height: 3.25rem;
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
 //////////////////////////////////
@@ -73,30 +73,61 @@
 //////////////////////////////////
 // USER NAVIGATION
 .user-nav {
-  background-color: greenyellow;
-  &__icon-box {
+  // Stretches this to fill the "header", as it is set to "align-items: center" on it's
+  // flex property. Here we are override that one.
+  align-self: stretch;
 
+  display: flex;
+  align-items: center;
+
+  // This ">" CSS selector used to Select all(*) direct children of "user-nav"
+  // (i.e : "user-nav__icon-box" and "user-nav__user")
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
+  &__icon-box {
+    position: relative;
   }
 
   &__icon {
     height: 2.25rem;
     width:2.25rem;
+    // You can use the fill property to change the color of the SVG images.
+    fill: var(--color-grey-dark-2);
   }
 
   &__notification {
+    font-size: .8rem;
+    color: white;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
 
-  }
-
-  &__user {
-
+    //  Flex box not only works for the elements, we can use it for the
+    //  aligning text also.
+    //  Here we are using flex box to center notification value inside it's container.
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__user-photo {
     height: 3.75rem;
     border-radius: 50%;
-  }
-
-  &__user-name {
-
+    margin-right: 1rem;
   }
 }
