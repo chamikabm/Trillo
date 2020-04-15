@@ -1,0 +1,35 @@
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--color-shadow-dark);
+
+  // TODO: Remove after all completed.
+  min-height: 50rem;
+}
+
+.header {
+  height: 7rem;
+  background-color: white;
+  border-bottom: var(--color-grey-light-2);
+}
+
+.content {
+  display: flex;
+  // flex: <flex-grow> <flex-shrink> <flex-basis>
+  // We don't want to grow the element, hence flex-grow = 0
+  // We don't want to shrink the element, hence flex-shrink = 0
+  flex: 0 0 10%;
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+}
+
+.hotel-view {
+  background-color: white;
+  background-color: orange;
+  // flex: <flex-grow>
+  // Take the full available space.
+  flex: 1;
+}
