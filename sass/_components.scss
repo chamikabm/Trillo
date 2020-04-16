@@ -441,3 +441,36 @@
 
 //////////////////////////////////
 // RECOMMEND
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+
+  display: flex;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__friends {
+
+  }
+
+  &__photo {
+    // Since we added the global fix to "html", to count the width and height including the
+    // padding and margin for all the elements, setting margin or padding will shrink the image element also.
+    // Thus it will cut the some portion of the image. Hence we reset the "box-sizing"
+    // to it's default value so that for the width and height those padding and margin
+    // will not get included.
+    box-sizing: content-box;
+
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid white;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+  }
+}
