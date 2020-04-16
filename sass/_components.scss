@@ -247,7 +247,7 @@
   display: flex;
   //justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 
   &__heading {
     font-size: 2.25rem;
@@ -377,3 +377,67 @@
     box-shadow: none;
   }
 }
+
+
+//////////////////////////////////
+// PARAGRAPH
+/*
+ Select "paragraph" elements without last one. Here we can't use the
+ 'last-child' selector,as there are other elements also. Then we need to use
+ 'last-of-type' selector, which select the relevant type elements.
+ */
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+
+//////////////////////////////////
+// LIST
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    // Each list item should take 50% width of above "list" element container.
+    // This allows us to have 2 elements side by side inside the container,
+    // as we have used the flex-wrap: wrap in the parent flex container(i.e: "list")
+    flex: 0 0 50%;
+    margin-bottom: .7rem;
+  }
+
+  &__item::before {
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: .7rem;
+
+    // Unlike we did with HTML SVG images to change it's color with "fill"
+    // CSS property, here we can't do it since we include images using CSS it self.
+    // Hence we need to use a different approach to tackle the issue. So that;
+    // we use, -webkit-mask-image property. This only supports in modern browsers.
+
+    // Older browsers
+    //background-image: url('../img/chevron-thin-right.svg');
+    //background-size: cover;
+
+    // Newer browsers - masks
+    background-color: var(--color-primary);
+    -webkit-mask-image: url('../img/chevron-thin-right.svg'); // Chrome, Safari
+    mask-image: url('../img/chevron-thin-right.svg');
+    // We need this to fit the image to 1 rem width and height.
+    // Because the actual image is larger than the 1 rem.
+    -webkit-mask-size: cover; // Chrome, Safari
+    mask-size: cover;
+  }
+}
+
+//////////////////////////////////
+// RECOMMEND
