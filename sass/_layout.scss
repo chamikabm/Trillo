@@ -62,4 +62,13 @@
   // flex: <flex-grow>
   // flex: 1 - Take the full available space.
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  // If don't set the "align-items: center" property, the button at the bottom will
+  // stretch out it's full width horizontally, because "align-items" default value is;
+  // "stretch", since we only want to take the button to take it's content width, we then
+  // need to set the "align-items: center", which will only takes the button content width.
+  align-items: center;
 }
