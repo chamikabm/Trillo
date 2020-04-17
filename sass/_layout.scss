@@ -38,6 +38,7 @@
 }
 
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
@@ -45,7 +46,6 @@
 }
 
 .description {
-  font-size: 1.4rem;
   background-color: white;
   box-shadow: var(--shadow-light);
   padding: 3rem;
@@ -57,8 +57,6 @@
 }
 
 .user-reviews {
-  background-color: yellowgreen;
-
   // Since ".description" takes 60% available width from ".detail" element, we want
   // this element to takes the remaining full width of the ".detail" element. So we set
   // flex: <flex-grow>
