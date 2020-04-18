@@ -493,17 +493,24 @@
     // we use, -webkit-mask-image property. This only supports in modern browsers.
 
     // Older browsers
-    //background-image: url('../img/chevron-thin-right.svg');
-    //background-size: cover;
+    background-image: url('../img/chevron-thin-right.svg');
+    background-size: cover;
 
     // Newer browsers - masks
-    background-color: var(--color-primary);
-    -webkit-mask-image: url('../img/chevron-thin-right.svg'); // Chrome, Safari
-    mask-image: url('../img/chevron-thin-right.svg');
-    // We need this to fit the image to 1 rem width and height.
-    // Because the actual image is larger than the 1 rem.
-    -webkit-mask-size: cover; // Chrome, Safari
-    mask-size: cover;
+    @supports (-webkit-mask-image: url('')) or (mask-image: url('')) {
+      background-color: var(--color-primary);
+      -webkit-mask-image: url('../img/chevron-thin-right.svg'); // Chrome, Safari
+      mask-image: url('../img/chevron-thin-right.svg');
+      // We need this to fit the image to 1 rem width and height.
+      // Because the actual image is larger than the 1 rem.
+      -webkit-mask-size: cover; // Chrome, Safari
+      mask-size: cover;
+
+      // Since newer browsers supports above "background-image" property it will replace
+      // the -webkit-mask-image related styles, hence you will not see the nicely colored
+      // list icons, to make them visible you need hide the background image
+      background-image: none;
+    }
   }
 }
 
