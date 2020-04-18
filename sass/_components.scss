@@ -14,6 +14,14 @@
   justify-content: center;
   align-items: center;
 
+  // In css flex box, deafult "order" values is 0, hence setting it to order: 1,
+  // It will be the last element as other element's order is 0.
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+
   &__input {
     // In input elements font related properties (i.e: color, size, family) does not inherit automatically,
     // we need to specify them explicitly.
@@ -220,6 +228,11 @@
       justify-content: center;
       padding: 2rem;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
   }
 
   &__icon {
@@ -231,6 +244,13 @@
     // currentColor take the color of the parent element.
     // Which is "color: var(--color-grey-light-1);" of "&__link"
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: .7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -277,6 +297,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -337,14 +362,26 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
+
     &-average {
       font-size: 2.25rem;
       font-weight: 300;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 1.8rem;
+      }
     }
 
     &-count {
       font-size: .8rem;
       text-transform: uppercase;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: .5rem;
+      }
     }
   }
 }

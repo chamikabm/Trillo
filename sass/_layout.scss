@@ -6,11 +6,8 @@
 
   // With media queries we can't use the CSS variables, thus we have to use the
   // SASS custom variables.
-  @media only screen and (max-width: $bp-largest) {
-    margin: 0;
-    max-width: 100%;
-    width: 100%;
-  }
+
+
 }
 
 .header {
@@ -21,6 +18,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    // Used to move the search bar to the next row if the flex container (i.e: "header" element)
+    // does not have enough space to hold the search bar.
+    flex-wrap: wrap;
+    align-content: space-around; // User to align flex items when they wrap into two or more rows.
+    height: 11rem;
+  }
 }
 
 .content {
@@ -56,8 +61,21 @@
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
 
+  /*
+   When are doing desktop first development (i.e media queries with "max-width")
+   with CSS media queries, we should put the largest screen size top
+   and the smallest one at the bottom, as all the media queries get applied
+   when we have smaller screens. For the mobile first development
+   (i.e media queries with "min-width") we should do it other way around.
+
+   See the example below for desktop first development.
+   */
   @media only screen and (max-width: $bp-medium) {
     padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
   }
 }
 
@@ -73,6 +91,11 @@
   @media only screen and (max-width: $bp-medium) {
     padding: 2rem;
     margin-right: 3rem; // same as .detail padding
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
   }
 }
 

@@ -41,6 +41,8 @@
 $bp-largest: 75em; // For 1200px ==> 1200px/16px == 75
 $bp-large: 68.75em; // For 1100px ==> 1100px/16px == 68.75
 $bp-medium: 56.25em; // For 900px ==> 900px/16px == 56.25
+$bp-small: 37.5em; // For 600px ==> 600px/16px == 37.5
+$bp-smallest: 31.25em; // For 500px ==> 500px/16px == 31.25
 
 * {
   margin: 0;
