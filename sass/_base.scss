@@ -34,8 +34,13 @@
 
   // Lines
   --line: 1px solid var(--color-grey-light-2)
-
 }
+
+// For media queries we are using em not rem.
+// 16px - Base font size of a browser.
+$bp-largest: 75em; // For 1200px ==> 1200px/16px == 75
+$bp-large: 68.75em; // For 1100px ==> 1100px/16px == 68.75
+$bp-medium: 56.25em; // For 900px ==> 900px/16px == 56.25
 
 * {
   margin: 0;
@@ -51,6 +56,10 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1 rem = 10px <-- (10px/16px)*100% = 62.5%
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; // 1 rem = 8px <-- (8px/16px)*100% = 62.5%
+  }
 }
 
 body {

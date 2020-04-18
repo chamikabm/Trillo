@@ -3,6 +3,14 @@
   margin: 8rem auto;
   background-color: var(--color-grey-light-2);
   box-shadow: var(--color-shadow-dark);
+
+  // With media queries we can't use the CSS variables, thus we have to use the
+  // SASS custom variables.
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
@@ -20,7 +28,11 @@
   // flex: <flex-grow> <flex-shrink> <flex-basis>
   // We don't want to grow the element, hence flex-grow = 0
   // We don't want to shrink the element, hence flex-shrink = 0
-  flex: 0 0 10%;
+  //flex: 0 0 10%;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -42,7 +54,11 @@
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
-  border-bottom: var(--line);;
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
 }
 
 .description {
@@ -52,8 +68,12 @@
   // We don't need to scale up or down the element, But we need this element to take.
   // 60% of the available width from ".detail" element.
   flex: 0 0 60%;
-  margin-right: 4.5rem;
+  margin-right: 4.5rem; // same as .detail padding
 
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem; // same as .detail padding
+  }
 }
 
 .user-reviews {
